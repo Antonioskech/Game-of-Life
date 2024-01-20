@@ -1,0 +1,4 @@
+﻿  Conway's_game_of_life.cpp
+C:\Users\User\OneDrive\Documents\ФМИ материали\Увод в програмирането\Курсов Проект\Conway's_game_of_life\Conway's_game_of_life\Conway's_game_of_life.cpp(330,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\User\OneDrive\Documents\ФМИ материали\Увод в програмирането\Курсов Проект\Conway's_game_of_life\Conway's_game_of_life\Conway's_game_of_life.cpp(438,15): warning C4101: 'generations': unreferenced local variable
+  Conway's_game_of_life.vcxproj -> C:\Users\User\OneDrive\Documents\ФМИ материали\Увод в програмирането\Курсов Проект\Conway's_game_of_life\x64\Debug\Conway's_game_of_life.exe

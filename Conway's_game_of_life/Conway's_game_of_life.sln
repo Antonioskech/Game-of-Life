@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34221.43
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Conway's_game_of_life", "Conway's_game_of_life\Conway's_game_of_life.vcxproj", "{31715F7D-063F-446D-825F-7D72CEC05932}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Debug|x64.ActiveCfg = Debug|x64
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Debug|x64.Build.0 = Debug|x64
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Debug|x86.ActiveCfg = Debug|Win32
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Debug|x86.Build.0 = Debug|Win32
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Release|x64.ActiveCfg = Release|x64
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Release|x64.Build.0 = Release|x64
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Release|x86.ActiveCfg = Release|Win32
+		{31715F7D-063F-446D-825F-7D72CEC05932}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1D80B4C6-400C-4BA3-998E-636FA9C5261A}
+	EndGlobalSection
+EndGlobal
