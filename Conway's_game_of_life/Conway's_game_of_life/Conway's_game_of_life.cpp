@@ -252,13 +252,35 @@ void clearBoard(char board[MAX_ROWS][MAX_COLS], int& m, int& n, int& prevM, int&
 
 void randomizeBoard(char board[MAX_ROWS][MAX_COLS], int& m, int& n) {
     int shuffleLevel;
-    cout << "Choose shuffle level:\n1 - Weakly shuffled\n2 - Moderately shuffled\n3 - Highly shuffled\nEnter your choice: ";
+    cout << "Choose shuffle level:\n2 - Weakly shuffled\n3 - Moderately shuffled\n4 - Highly shuffled\nEnter your choice: ";
     cin >> shuffleLevel;
 
     // Validation for the level
-    if (shuffleLevel < 1 || shuffleLevel > 3) {
+    if (shuffleLevel > 4) {
         cout << "Invalid shuffle level. Using default (moderately shuffled)." << endl;
         shuffleLevel = 2;
+    }
+
+    if (shuffleLevel == 1)
+    {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                board[i][j] = '@';
+            }
+        }
+        writeState(board, m, n, cout);
+        return;
+    }
+
+    if (shuffleLevel == 0)
+    {
+        for (int i = 0; i < m; ++i) {
+            for (int j = 0; j < n; ++j) {
+                board[i][j] = '-';
+            }
+        }
+        writeState(board, m, n, cout);
+        return;
     }
 
     srand(time(0));
@@ -278,13 +300,13 @@ void randomizeBoard(char board[MAX_ROWS][MAX_COLS], int& m, int& n) {
 
             //Depending on the shuffleLevel, create different probabilities for alive cell
             switch (shuffleLevel) {
-            case 1:  // weakly shuffled
+            case 2:  // weakly shuffled
                 probability = 20;
                 break;
-            case 2:  // default shuffle
+            case 3:  // default shuffle
                 probability = 50;
                 break;
-            case 3:  // highly shuffled
+            case 4:  // highly shuffled
                 probability = 80;
                 break;
             default:
