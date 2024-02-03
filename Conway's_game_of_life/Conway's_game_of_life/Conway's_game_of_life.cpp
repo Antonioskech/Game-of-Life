@@ -1,4 +1,4 @@
-﻿/**
+/**
 *
 * Solution to course project # <2>
 * Introduction to programming course
@@ -149,6 +149,9 @@ void updateState(char board[MAX_ROWS][MAX_COLS], int& m, int& n) {
             board[i][j] = newBoard[i][j];
         }
     }
+
+    cout << "New board size: " << n << "x" << m << endl;
+    writeState(board, m, n, cout);
 }
 
 void resizeBoard(char board[MAX_ROWS][MAX_COLS], int& m, int& n) {
@@ -196,75 +199,6 @@ bool isCoordinateUsed(int x, int y) {
 
 void markCoordinateUsed(int x, int y) {
     usedCoordinates[x][y] = true;
-}
-
-void stepForward(char board[MAX_ROWS][MAX_COLS], int m, int n) {
-    // Check if clearBoard has been called
-    if (clearBoardCalled) {
-        // Reset the flag
-        clearBoardCalled = false;
-
-        // Reset all used coordinates
-        for (int i = 0; i < MAX_COORDS; ++i) {
-            for (int j = 0; j < MAX_COORDS; ++j) {
-                usedCoordinates[i][j] = false;
-            }
-        }
-
-        cout << "Coordinates have been cleared!" << endl;
-    }
-    int x, y;
-
-    do {
-        // Ask for the X coordinate
-        cout << "Enter row (X) coordinate to move: ";
-        cin >> x;
-
-        // Check for the validity of the X coordinate
-        if (x < 0 || x >= m) {
-            cout << "Invalid row coordinate. Please try again." << endl;
-            continue;
-        }
-
-        // Ask for the Y coordinate
-        cout << "Enter column (Y) coordinate to move: ";
-        cin >> y;
-
-        // Check for the validity of the Y coordinate
-        if (y < 0 || y >= n) {
-            cout << "Invalid column coordinate. Please try again." << endl;
-            continue;
-        }
-
-        // Check if the coordinates have already been used
-        if (usedCoordinates[x - 1][y - 1]) {
-            cout << "These coordinates have already been used. Please choose different ones." << endl;
-        }
-        else {
-            // Mark the coordinates as used
-            usedCoordinates[x - 1][y - 1] = true;
-            break;  // Exit the loop if the coordinates are valid and unused
-        }
-    } while (true);
-
-    // Toggle the state of the cell
-    board[x - 1][y - 1] = (board[x - 1][y - 1] == '@') ? '-' : '@';
-
-    // Display the updated board and marked coordinates
-    cout << "Current coordinates marked with +:" << endl << endl;
-
-    // Display the board with "+" marks for the entered coordinates
-    for (int i = 0; i < m; ++i) {
-        for (int j = 0; j < n; ++j) {
-            if (i == x - 1 && j == y - 1) {
-                cout << "+";
-            }
-            else {
-                cout << board[i][j];
-            }
-        }
-        cout << endl;
-    }
 }
 
 void toggleCell(char board[MAX_ROWS][MAX_COLS], int m, int n) {
@@ -451,7 +385,7 @@ int main() {
             loadFile(board, m, n);
             break;
         case 3:
-            stepForward(board, m, n);
+            updateState(board, m, n);
             break;
         case 4:
             resizeBoard(board, m, n);
