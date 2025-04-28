@@ -1,25 +1,61 @@
-# Проект Game of life 
-## Какво е Game of life? 
-Играта на Живота, известна също просто като Живот, е създадена от британския математик Джон Хортън Конуей през 1970 г.
-Вселената на Играта на Живота е безкрайна, двумерна ортогонална решетка от квадратни клетки, всяка от които може да бъде в едно от двата възможни състояния - жива или мъртва (или населена и ненаселена, съответно). Всяка клетка взаимодейства с осемте си съседи, които са клетките хоризонтално, вертикално или диагонално съседни. На всеки стъпки във времето се случват следните преходи:
-- Жива клетка с по-малко от 2 живи съседа умира
-- Жива клетка с 2 или 3 живи съседа остава жива
-- Жива клетка с повече от 3 живи съседа умира
-- Мъртва клетка с точно 3 живи съседа се съживява
+# Game of Life Project
 
-## Функции на играта:
-1. Нова игра (New game). Започва нова игра с празно игрално поле с начален размер (16, 8).
-2. Зареждане на файл (Load file). Пита потребителя за име на файл, след което се опитва да зареди от него игрално поле. При успех, започва нова игра със заредените данни.
-3. Ход напред (Step forward). Симулира се един ход от играта и се показва новото състояние на игралното поле, заедно със същото меню.
-4. Оразмеряване на полето (Resize). Изписва текущия размер на полето и пита потребителя за две числа X и Y. Размерът на полето се променя на широчина X и височина Y, като горния ляв ъгъл остава същия. Ако някоя е ос стане по-малка, съществуващите клетки в нея се забравят. Ако някоя ос стане по-голяма, новите клетки са по подразбиране мъртви.
-5. Промяна на клетка (Toggle cell). Пита потребителя за координати в игралното поле и обръща състоянието на клетката на посочените координати. Показва се новото състояние на игралното поле, заедно със същото меню. По ваша преценка, ако се посочат координати, които в момента не съществуват (неположително число или число, по-голямо от игралното поле), полето да се разшири по горните правила.
-6. Изчистване на полето (Clear). Всички клетки се променят на мъртви. Показва се новото състояние на игралното поле, заедно със същото меню.
-7. Създаване на случайно поле (Randomize). Пита потребителя за число N, след което променя клетките в полето на случайни. Повечето клетки се променят на мъртви, като има вероятност 1 в N някоя клетка да бъде променена на жива (при N=0, всички клетки се променят на мъртви; при N=1, всички клетки се променят на живи).
-8. Записване във файл (Save to file). Пита потребителя за име на файл, след което записва текущото състояние на игралното поле в него.
-9. Край (End). Играта приключва и програмата се връща към началното меню.
+## What is the Game of Life?
+The **Game of Life**, also known simply as **Life**, was created by British mathematician **John Horton Conway** in 1970.
 
-## Ето как изглежда играта
-![gof](https://github.com/Antonioskech/Game-of-Life/assets/147728161/0193cf0e-aed3-4c41-a0db-aa11d362bda8)
+The universe of the Game of Life is an **infinite, two-dimensional, orthogonal grid** of square cells, where each cell is either **alive** or **dead** (also referred to as **populated** and **unpopulated**).  
+Each cell interacts with its **eight neighbors** — the cells that are horizontally, vertically, or diagonally adjacent.
+
+At each step of time, the following transitions occur:
+- A **live** cell with **fewer than two** live neighbors **dies** (underpopulation).
+- A **live** cell with **two or three** live neighbors **stays alive** (stable population).
+- A **live** cell with **more than three** live neighbors **dies** (overpopulation).
+- A **dead** cell with **exactly three** live neighbors becomes **alive** (reproduction).
+
+---
+
+## Game Features
+
+1. **New Game**  
+   Starts a new game with an empty grid of size **16×8**.
+
+2. **Load File**  
+   Prompts the user for a filename, then attempts to load a grid from it.  
+   If successful, a new game starts with the loaded data.
+
+3. **Step Forward**  
+   Simulates a single step in the game and displays the updated grid along with the game menu.
+
+4. **Resize Grid**  
+   Displays the current grid size and prompts the user for new dimensions **X** and **Y**.  
+   - If the grid shrinks, cells outside the new dimensions are lost.  
+   - If it grows, new cells are initialized as dead.
+
+5. **Toggle Cell**  
+   Prompts the user for coordinates and toggles the state (alive/dead) of the specified cell.  
+   - Optionally, if the coordinates are out of bounds (negative or too large), the grid can automatically expand following the resizing rules.
+
+6. **Clear Grid**  
+   Sets all cells to dead and displays the cleared grid along with the menu.
+
+7. **Randomize Grid**  
+   Prompts the user for a number **N** and randomizes the grid:  
+   - Most cells become dead.  
+   - Each cell has a 1-in-N chance of being alive.  
+   (If **N=0**, all cells are dead. If **N=1**, all cells are alive.)
+
+8. **Save to File**  
+   Prompts the user for a filename and saves the current grid state into that file.
+
+9. **End Game**  
+   Exits the game and returns to the main menu.
+
+---
+
+## Example Screenshot
+
+![Game of Life Example](https://github.com/Antonioskech/Game-of-Life/assets/147728161/0193cf0e-aed3-4c41-a0db-aa11d362bda8)
+
 
 
 
